@@ -11,7 +11,6 @@ select
         'reference',
         adapter.quote('name'),
         'boardid',
-        object_to_string('links'),
     ]) }} as _airbyte_job_boards_hashid,
     tmp.*
 from {{ ref('job_boards_ab2') }} tmp

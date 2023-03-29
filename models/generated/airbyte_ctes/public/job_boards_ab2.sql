@@ -10,7 +10,6 @@ select
     cast(reference as {{ dbt_utils.type_string() }}) as reference,
     cast({{ adapter.quote('name') }} as {{ dbt_utils.type_string() }}) as {{ adapter.quote('name') }},
     cast(boardid as {{ dbt_utils.type_bigint() }}) as boardid,
-    cast(links as {{ type_json() }}) as links,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
