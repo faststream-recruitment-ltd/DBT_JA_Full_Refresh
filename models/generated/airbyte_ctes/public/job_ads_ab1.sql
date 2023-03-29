@@ -8,6 +8,7 @@
 -- depends_on: {{ source('public', '_airbyte_raw_job_ads') }}
 select
     {{ json_extract('table_alias', '_airbyte_data', ['owner'], ['owner']) }} as {{ adapter.quote('owner') }},
+    {{ json_extract_scalar('_airbyte_data', ['owner', 'owner'], ['ownerId']) }} as ownerId,
     {{ json_extract_scalar('_airbyte_data', ['summary'], ['summary']) }} as summary,
     {{ json_extract_scalar('_airbyte_data', ['postAt'], ['postAt']) }} as postat,
     {{ json_extract_scalar('_airbyte_data', ['description'], ['description']) }} as description,

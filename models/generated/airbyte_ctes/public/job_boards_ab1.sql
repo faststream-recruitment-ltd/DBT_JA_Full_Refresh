@@ -10,7 +10,6 @@ select
     {{ json_extract_scalar('_airbyte_data', ['reference'], ['reference']) }} as reference,
     {{ json_extract_scalar('_airbyte_data', ['name'], ['name']) }} as {{ adapter.quote('name') }},
     {{ json_extract_scalar('_airbyte_data', ['boardId'], ['boardId']) }} as boardid,
-    {{ json_extract('table_alias', '_airbyte_data', ['links'], ['links']) }} as links,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
