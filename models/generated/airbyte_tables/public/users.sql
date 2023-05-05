@@ -1,7 +1,7 @@
 {{ config(
     indexes = [{'columns':['_airbyte_emitted_at'],'type':'btree'}],
     unique_key = '_airbyte_ab_id',
-    schema = "public",
+    schema = "jobadder",
     post_hook = ["
                     {%
                         set scd_table_relation = adapter.get_relation(
