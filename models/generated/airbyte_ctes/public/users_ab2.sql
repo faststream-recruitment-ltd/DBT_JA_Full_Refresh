@@ -20,7 +20,7 @@ select
     cast(links as {{ type_json() }}) as links,
     cast({{ adapter.quote('position') }} as {{ dbt_utils.type_string() }}) as {{ adapter.quote('position') }},
     cast(email as {{ dbt_utils.type_string() }}) as email,
-    cast(updatedat as timestamp with time zone)) as updatedat,
+    cast(updatedat as timestamp with time zone) as updatedat,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
