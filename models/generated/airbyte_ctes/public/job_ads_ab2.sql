@@ -19,7 +19,7 @@ select
     cast(jobBoard_name as {{ dbt_utils.type_string() }}) as jobBoard_name,
     cast(boardId as {{ dbt_utils.type_string() }}) as boardId,
     cast(reference as {{ dbt_utils.type_string() }}) as reference,
-    cast(createdat as {{ dbt_utils.type_string() }}) as createdat,
+    cast(createdat as timestamp with time zone) createdat,
     cast(adid as {{ dbt_utils.type_bigint() }}) as adid,
     cast(createdBy_email as {{ dbt_utils.type_string() }}) as createdBy_email,
     cast(createdBy_userId as {{ dbt_utils.type_string() }}) as createdBy_userId,

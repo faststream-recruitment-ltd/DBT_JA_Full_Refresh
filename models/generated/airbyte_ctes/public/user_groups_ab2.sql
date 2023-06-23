@@ -11,7 +11,7 @@ select
     cast(firstname as {{ dbt_utils.type_string() }}) as firstname,
     cast(mentionname as {{ dbt_utils.type_string() }}) as mentionname,
     cast(lastname as {{ dbt_utils.type_string() }}) as lastname,
-    cast(createdat as {{ dbt_utils.type_string() }}) as createdat,
+    cast(createdat as timestamp with time zone) as createdat,
     cast(groupId as {{ dbt_utils.type_bigint() }}) as groupId,
     cast(group_name as {{ dbt_utils.type_string() }}) as group_name,   
     cast(jobtitle as {{ dbt_utils.type_string() }}) as jobtitle,
@@ -30,7 +30,7 @@ select
     cast(culture as {{ dbt_utils.type_string() }}) as culture,
     cast({{ adapter.quote('position') }} as {{ dbt_utils.type_string() }}) as {{ adapter.quote('position') }},
     cast(email as {{ dbt_utils.type_string() }}) as email,
-    cast(updatedat as {{ dbt_utils.type_string() }}) as updatedat,
+    cast(updatedat as as timestamp with time zone) as updatedat,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
